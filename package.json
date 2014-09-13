@@ -1,0 +1,17 @@
+{
+    "name": "jshint.configurator",
+    "title": "JSHint Configurator",
+    "description": "Enables configuration of JSHint options. Extract JSHint options to JSON.",
+    "homepage": "https://github.com/georapbox/brackets-JSHint-Configurator",
+    "version": "1.0.0",
+    "author": "George Raptis <georapbox@gmail.com> (http://georap.gr)",
+    "license": "MIT",
+    "keywords": [
+        "jshint",
+        "configurator",
+        "options"
+    ],
+    "engines": {
+        "brackets": ">=0.37.0"
+    }
+}

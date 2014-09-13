@@ -1,0 +1,575 @@
+<div class="georapbox-jshint-settings-dialog modal">
+    <div class="modal-header">
+        <h1 class="dialog-title">{{DIALOG_TITLE}}</h1>
+
+        <div class="header-options">
+            <a href="#" class="btn primary clear-options">{{CLEAR_OPTIONS}}</a>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="field-container clearfix">
+            <h3>{{ENFORCING_OPTIONS}}</h3>
+            <p>{{ENFORCING_OPTIONS_DESC}}</p>
+            
+            <div class="column col-5">
+                <div data-name="bitwise">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{BITWISE_DESC}}"><a href="http://www.jshint.com/docs/options/#bitwise">{{BITWISE}}</a></span>
+                </div>
+                <div data-name="camelcase">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{CAMELCASE_DESC}}"><a href="http://www.jshint.com/docs/options/#camelcase">{{CAMELCASE}}</a></span>
+                </div>
+                <div data-name="curly">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{CURLY_DESC}}"><a href="http://www.jshint.com/docs/options/#curly">{{CURLY}}</a></span>
+                </div>
+                <div data-name="eqeqeq">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{EQEQEQ_DESC}}"><a href="http://www.jshint.com/docs/options/#eqeqeq">{{EQEQEQ}}</a></span>
+                </div>
+                <div data-name="es3">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{ES3_DESC}}"><a href="http://www.jshint.com/docs/options/#es3">{{ES3}}</a></span>
+                </div>
+            </div>
+
+            <div class="column col-5">
+                <div data-name="forin">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{FORIN_DESC}}"><a href="http://www.jshint.com/docs/options/#forin">{{FORIN}}</a></span>
+                </div>
+                <div data-name="freeze">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{FREEZE_DESC}}"><a href="http://www.jshint.com/docs/options/#freeze">{{FREEZE}}</a></span>
+                </div>
+                <div data-name="immed">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{IMMED_DESC}}"><a href="http://www.jshint.com/docs/options/#immed">{{IMMED}}</a></span>
+                </div>
+                <input data-name="indent" type="number" min="0" max="10">
+                <label title="indent">
+                    <span class="option-name" title="{{INDENT_DESC}}"><a href="http://www.jshint.com/docs/options/#indent">{{INDENT}}</a></span>
+                </label>
+                <div data-name="latedef">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                        <option value="nofunc">nofunc</option>
+                    </select>
+                    <span class="option-name" title="{{LATEDEF_DESC}}"><a href="http://www.jshint.com/docs/options/#latedef">{{LATEDEF}}</a></span>
+                </div>
+            </div>
+
+            <div class="column col-5">
+                <div data-name="newcap">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NEWCAP_DESC}}"><a href="http://www.jshint.com/docs/options/#newcap">{{NEWCAP}}</a></span>
+                </div>
+                <div data-name="noarg">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NOARG_DESC}}"><a href="http://www.jshint.com/docs/options/#noarg">{{NOARG}}</a></span>
+                </div>
+                <div data-name="noempty">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NOEMPTY_DESC}}"><a href="http://www.jshint.com/docs/options/#noempty">{{NOEMPTY}}</a></span>
+                </div>
+                <div data-name="nonbsp">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NONBSP_DESC}}"><a href="http://www.jshint.com/docs/options/#nonbsp">{{NONBSP}}</a></span>
+                </div>
+                <div data-name="nonew">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NONEW_DESC}}"><a href="http://www.jshint.com/docs/options/#nonew">{{NONEW}}</a></span>
+                </div>
+            </div>
+
+            <div class="column col-5 last">
+                <div data-name="plusplus">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{PLUSPLUS_DESC}}"><a href="http://www.jshint.com/docs/options/#plusplus">{{PLUSPLUS}}</a></span>
+                </div>
+                <div data-name="quotmark">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="single">single</option>
+                        <option value="double">double</option>
+                    </select>
+                    <span class="option-name" title="{{QUOTMARK_DESC}}"><a href="http://www.jshint.com/docs/options/#quotmark">{{QUOTMARK}}</a></span>
+                </div>
+                <div data-name="undef">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{UNDEF_DESC}}"><a href="http://www.jshint.com/docs/options/#undef">{{UNDEF}}</a></span>
+                </div>
+                <div data-name="unused">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                        <option value="vars">vars</option>
+                        <option value="strict">strict</option>
+                    </select>
+                    <span class="option-name" title="{{UNUSED_DESC}}"><a href="http://www.jshint.com/docs/options/#unused">{{UNUSED}}</a></span>
+                </div>
+                <div data-name="strict">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{STRICT_DESC}}"><a href="http://www.jshint.com/docs/options/#strict">{{STRICT}}</a></span>
+                </div>
+            </div>
+            
+            <div class="column col-5">
+                <input data-name="maxparams" type="number" min="0">
+                <label title="maxparams">
+                    <span class="option-name" title="{{MAXPARAMS_DESC}}"><a href="http://www.jshint.com/docs/options/#maxparams">{{MAXPARAMS}}</a></span>
+                </label>
+                
+                <input data-name="maxdepth" type="number" min="0">
+                <label title="maxdepth">
+                    <span class="option-name" title="{{MAXDEPTH_DESC}}"><a href="http://www.jshint.com/docs/options/#maxdepth">{{MAXDEPTH}}</a></span>
+                </label>
+                
+                <input data-name="maxstatements" type="number" min="0">
+                <label title="maxstatements">
+                    <span class="option-name" title="{{MAXSTATEMENTS_DESC}}"><a href="http://www.jshint.com/docs/options/#maxstatements">{{MAXSTATEMENTS}}</a></span>
+                </label>
+                
+                <input data-name="maxcomplexity" type="number" min="0">
+                <label title="maxcomplexity">
+                    <span class="option-name" title="{{MAXCOMPLEXITY_DESC}}"><a href="http://www.jshint.com/docs/options/#maxcomplexity">{{MAXCOMPLEXITY}}</a></span>
+                </label>
+                
+                <input data-name="maxlen" type="number" min="0">
+                <label title="maxlen">
+                    <span class="option-name" title="{{MAXLEN_DESC}}"><a href="http://www.jshint.com/docs/options/#maxlen">{{MAXLEN}}</a></span>
+                </label>
+            </div>
+            
+            <div style="clear:both;"></div>
+            
+            <h3>{{RELAXING_OPTIONS}}</h3>
+            <p>{{RELAXING_OPTIONS_DESC}}</p>
+            
+            <div class="column col-5">
+                <div data-name="asi">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{ASI_DESC}}"><a href="http://www.jshint.com/docs/options/#asi">{{ASI}}</a></span>
+                </div>
+                <div data-name="boss">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{BOSS_DESC}}"><a href="http://www.jshint.com/docs/options/#boss">{{BOSS}}</a></span>
+                </div>
+                <div data-name="debug">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{DEBUG_DESC}}"><a href="http://www.jshint.com/docs/options/#debug">{{DEBUG}}</a></span>
+                </div>
+                <div data-name="eqnull">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{EQNULL_DESC}}"><a href="http://www.jshint.com/docs/options/#eqnull">{{EQNULL}}</a></span>
+                </div>
+                <div data-name="esnext">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{ESNEXT_DESC}}"><a href="http://www.jshint.com/docs/options/#esnext">{{ESNEXT}}</a></span>
+                </div>
+            </div>
+            
+            <div class="column col-5">
+                <div data-name="evil">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{EVIL_DESC}}"><a href="http://www.jshint.com/docs/options/#evil">{{EVIL}}</a></span>
+                </div>
+                <div data-name="expr">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{EXPR_DESC}}"><a href="http://www.jshint.com/docs/options/#expr">{{EXPR}}</a></span>
+                </div>
+                <div data-name="funcscope">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{FUNSCOPE_DESC}}"><a href="http://www.jshint.com/docs/options/#funcscope">{{FUNSCOPE}}</a></span>
+                </div>
+                <div data-name="globalstrict">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{GLOBALSTRICT_DESC}}"><a href="http://www.jshint.com/docs/options/#globalstrict">{{GLOBALSTRICT}}</a></span>
+                </div>
+                <div data-name="iterator">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{ITERATOR_DESC}}"><a href="http://www.jshint.com/docs/options/#iterator">{{ITERATOR}}</a></span>
+                </div>
+            </div>
+            
+            <div class="column col-5">
+                <div data-name="lastsemic">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{LASTSEMIC_DESC}}"><a href="http://www.jshint.com/docs/options/#lastsemic">{{LASTSEMIC}}</a></span>
+                </div>
+                <div data-name="laxbreak">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{LAXBREAK_DESC}}"><a href="http://www.jshint.com/docs/options/#laxbreak">{{LAXBREAK}}</a></span>
+                </div>
+                <div data-name="laxcomma">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{LAXCOMMA_DESC}}"><a href="http://www.jshint.com/docs/options/#laxcomma">{{LAXCOMMA}}</a></span>
+                </div>
+                <div data-name="loopfunc">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{LOOPFUNC_DESC}}"><a href="http://www.jshint.com/docs/options/#loopfunc">{{LOOPFUNC}}</a></span>
+                </div>
+                <input data-name="maxerr" type="number" min="0">
+                <label title="maxerr">
+                    <span class="option-name" title="{{MAXERR_DESC}}"><a href="http://www.jshint.com/docs/options/#maxerr">{{MAXERR}}</a></span>
+                </label>
+            </div>
+            
+            <div class="column col-5">
+                <div data-name="moz">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{MOZ_DESC}}"><a href="http://www.jshint.com/docs/options/#moz">{{MOZ}}</a></span>
+                </div>
+                <div data-name="multistr">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{MULTISTR_DESC}}"><a href="http://www.jshint.com/docs/options/#multistr">{{MULTISTR}}</a></span>
+                </div>
+                <div data-name="notypeof">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NOTYPEOF_DESC}}"><a href="http://www.jshint.com/docs/options/#notypeof">{{NOTYPEOF}}</a></span>
+                </div>
+                <div data-name="proto">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{PROTO_DESC}}"><a href="http://www.jshint.com/docs/options/#proto">{{PROTO}}</a></span>
+                </div>
+                <div data-name="scripturl">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{SCRIPTURL_DESC}}"><a href="http://www.jshint.com/docs/options/#scripturl">{{SCRIPTURL}}</a></span>
+                </div>
+            </div>
+            
+            <div class="column col-5 last">
+                <div data-name="shadow">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{SHADOW_DESC}}"><a href="http://www.jshint.com/docs/options/#shadow">{{SHADOW}}</a></span>
+                </div>
+                <div data-name="sub">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{SUB_DESC}}"><a href="http://www.jshint.com/docs/options/#sub">{{SUB}}</a></span>
+                </div>
+                <div data-name="supernew">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{SUPERNEW_DESC}}"><a href="http://www.jshint.com/docs/options/#supernew">{{SUPERNEW}}</a></span>
+                </div>
+                <div data-name="validthis">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{VALIDTHIS_DESC}}"><a href="http://www.jshint.com/docs/options/#validthis">{{VALIDTHIS}}</a></span>
+                </div>
+                <div data-name="noyield">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NOYIELD_DESC}}"><a href="http://www.jshint.com/docs/options/#noyield">{{NOYIELD}}</a></span>
+                </div>
+            </div>
+            
+            <div style="clear:both;"></div>
+            
+            <h3>{{ENVIRONMENTS}}</h3>
+            <p>{{ENVIRONMENTS_DESC}}</p>
+            
+            <div class="column col-5">
+                <div data-name="browser">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{BROWSER_DESC}}"><a href="http://www.jshint.com/docs/options/#browser">{{BROWSER}}</a></span>
+                </div>
+                <div data-name="couch">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{COUCH_DESC}}"><a href="http://www.jshint.com/docs/options/#couch">{{COUCH}}</a></span>
+                </div>
+                <div data-name="devel">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{DEVEL_DESC}}"><a href="http://www.jshint.com/docs/options/#devel">{{DEVEL}}</a></span>
+                </div>
+                <div data-name="dojo">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{DOJO_DESC}}"><a href="http://www.jshint.com/docs/options/#dojo">{{DOJO}}</a></span>
+                </div>
+                <div data-name="jquery">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{JQUERY_DESC}}"><a href="http://www.jshint.com/docs/options/#jquery">{{JQUERY}}</a></span>
+                </div>
+            </div>
+            
+            <div class="column col-5">
+                <div data-name="mootools">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{MOOTOOLS_DESC}}"><a href="http://www.jshint.com/docs/options/#mootools">{{MOOTOOLS}}</a></span>
+                </div>
+                <div data-name="node">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NODE_DESC}}"><a href="http://www.jshint.com/docs/options/#node">{{NODE}}</a></span>
+                </div>
+                <div data-name="nonstandard">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NONSTANDARD_DESC}}"><a href="http://www.jshint.com/docs/options/#nonstandard">{{NONSTANDARD}}</a></span>
+                </div>
+                <div data-name="phantom">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{PHANTOM_DESC}}"><a href="http://www.jshint.com/docs/options/#phantom">{{PHANTOM}}</a></span>
+                </div>
+                <div data-name="prototypejs">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{PROTOTYPEJS_DESC}}"><a href="http://www.jshint.com/docs/options/#prototypejs">{{PROTOTYPEJS}}</a></span>
+                </div>
+            </div>
+            
+            <div class="column col-5 last">
+                <div data-name="rhino">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{RHINO_DESC}}"><a href="http://www.jshint.com/docs/options/#rhino">{{RHINO}}</a></span>
+                </div>
+                <div data-name="worker">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{WORKER_DESC}}"><a href="http://www.jshint.com/docs/options/#worker">{{WORKER}}</a></span>
+                </div>
+                <div data-name="wsh">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{WSH_DESC}}"><a href="http://www.jshint.com/docs/options/#wsh">{{WSH}}</a></span>
+                </div>
+                <div data-name="yui">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{YUI_DESC}}"><a href="http://www.jshint.com/docs/options/#yui">{{YUI}}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer first">
+        <div class="field-container clearfix">
+            <h2>{{DIRECTIVE_TITLE}}</h2>
+            <div class="textarea-options">
+                <a class="select-button" href="#">{{SELECT}}</a> |
+                <a class="extract-button" href="#">{{EXTRACT}}</a>
+            </div>
+            <textarea id="georapbox-jsl-conf-result" readonly required></textarea>
+            <p style="float:left;color:#787878;margin:0;"><em>{{{HINT}}}</em></p>
+            <p style="float:right;margin:0;"><label><input type="checkbox" name="jsonConvert"> {{JSON_CONVERT}}</label></p>
+        </div>
+    </div>
+
+   <div class="modal-footer last">
+        <a style="float:left;" href="http://www.jshint.com/docs/options/">{{JSHINT_INFO}}</a>
+        <a href="#" class="dialog-button btn primary" data-button-id="ok">{{DIALOG_OK}}</a>
+        <a href="#" class="dialog-button btn" data-button-id="cancel">{{DIALOG_CANCEL}}</a>
+    </div>
+</div>
