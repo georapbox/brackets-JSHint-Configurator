@@ -1,7 +1,13 @@
 JSHint Configurator
 ===================
 
-[Brackets](http://brackets.io/) extension that enables configuration of JSHint options.
+[Brackets](http://brackets.io/) extension that enables configuration of [JSHint](http://www.jshint.com/) options.
+
+**NOTE:** This extensions assumes you have a JSHint plugin installed. 
+
+#####Suggested JSHint plugins:
+- @cfjedimaster's [brackets-jshint](https://github.com/cfjedimaster/brackets-jshint)
+- @manchagnu's [Brackets-InteractiveLinter](https://github.com/MiguelCastillo/Brackets-InteractiveLinter)
 
 ## Installation
 
