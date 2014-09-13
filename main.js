@@ -1,5 +1,6 @@
+/*jshint camelcase: true, curly: true, eqeqeq: true, forin: true, freeze: true, immed: true, latedef: nofunc, newcap: true, noarg: true, noempty: true, nonew: true, unused: strict, strict: true, indent: 3*/
 /*global define, $, brackets */
-define(function (require, exports, module) {
+define(function (require, module) {
     'use strict';
     
     var AppInit = brackets.getModule('utils/AppInit'),
