@@ -35,5 +35,8 @@ Check the desired options, click the **'Insert directive to document'** button..
 
 ##Changelog
 
+### 1.0.1
+- Fix bug while loading external stylesheet.
+
 ### 1.0.0
 - Initial release.
