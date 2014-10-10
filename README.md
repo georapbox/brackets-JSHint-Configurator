@@ -35,6 +35,9 @@ Check the desired options, click the **'Insert directive to document'** button..
 
 ##Changelog
 
+### 1.0.2
+- Fix "Extract to file" functionality due to deprecated method calls.
+
 ### 1.0.1
 - Fix bug while loading external stylesheet.
 

@@ -211,7 +211,6 @@ define(function (require, exports) {
             var counter = 1,
                 doc = DocumentManager.createUntitledDocument(counter, fileExtension);
 
-            DocumentManager.setCurrentDocument(doc);
             doc.setText(content);
         }
 
@@ -317,7 +316,7 @@ define(function (require, exports) {
                 if (jsonConverter.is(':checked')) {
                     extractedFileExtension = '.json';
                 } else {
-                    extractedFileExtension = '.js';
+                    extractedFileExtension = '.txt';
                 }
 
                 // Create a new untitled file with the appropriate extension.
