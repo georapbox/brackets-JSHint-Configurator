@@ -35,6 +35,14 @@ Check the desired options, click the **'Insert directive to document'** button..
 
 ##Changelog
 
+### 1.1.0
+- Add support to read from <code>.jshintrc</code> configuration file.
+
+If there is a JSHint configuration file in project, the extension will read from it and populate the appropriate options.
+If more than one configuration files, the extension will look up until it finds the first one, as it traverses the project's tree, from the directory of the current document until it reaches project's root.
+
+**NOTE:** If directive is inserted in first line of current document, it will take precedence against the global options defined in <code>.jshintrc</code> configuration file.
+
 ### 1.0.2
 - Fix "Extract to file" functionality due to deprecated method calls.
 

@@ -1,5 +1,3 @@
-/*jshint camelcase: true, curly: true, eqeqeq: true, forin: true, freeze: true, immed: true, latedef: nofunc, newcap: true, noarg: true, noempty: true, nonew: true, unused: strict, strict: true, indent: 4*/
-/*global define, $, brackets, Mustache*/
 define(function (require, exports) {
     'use strict';
     
@@ -8,7 +6,8 @@ define(function (require, exports) {
         DocumentManager = brackets.getModule('document/DocumentManager'),
 		OptionsTemplate = require('text!html/options.html'),
         Strings = require('strings'),
-        FileExtension = require('services/file_extension');
+        FileExtension = require('services/file_extension'),
+		JSHintConfig = require('services/read_config');
     
     /**
 	 * Displays dialog with JSHint options.
@@ -145,11 +144,10 @@ define(function (require, exports) {
 
         /**
          * Gets directive from editor and populates the appropriate options in dialog.
-         * Assumes that the directive is on the first line of the document.
+		 * @param directiveString {String} The directive string, taken either from editor or the config file.
          */
-        function getDirectiveFromEditor() {
-            var firstLineContent = currentDoc.getLine(0),
-                tempArr = [],
+        function populateModalOptions(directiveString) {
+            var tempArr = [],
                 arr = [],
                 tempArrLen,
                 arrLen,
@@ -159,49 +157,47 @@ define(function (require, exports) {
                 option,
                 i;
 
-            if (firstLineContent.indexOf('/*jshint') >= 0) {
-                subStr = firstLineContent.replace('/*jshint', '');
-                subStr = subStr.replace('*/', '');
-                tempArr = subStr.split(',');
-                tempArr = $.map(tempArr, $.trim);
-                tempArrLen = tempArr.length;
+			subStr = directiveString.replace('/*jshint', '');
+			subStr = subStr.replace('*/', '');
+			tempArr = subStr.split(',');
+			tempArr = $.map(tempArr, $.trim);
+			tempArrLen = tempArr.length;
 
-                for (i = 0; i < tempArrLen; i += 1) {
-                    tempArrItem = tempArr[i];
+			for (i = 0; i < tempArrLen; i += 1) {
+				tempArrItem = tempArr[i];
 
-                    option = {
-                        name: tempArrItem.substr(0, tempArrItem.indexOf(':')),
-                        value: $.trim(tempArrItem.substr(tempArrItem.indexOf(':')).replace(':', ''))
-                    };
+				option = {
+					name: tempArrItem.substr(0, tempArrItem.indexOf(':')),
+					value: $.trim(tempArrItem.substr(tempArrItem.indexOf(':')).replace(':', ''))
+				};
 
-                    arr.push(option);
-                }
+				arr.push(option);
+			}
 
-                arrLen = arr.length;
+			arrLen = arr.length;
 
-                for (i = 0; i < arrLen; i += 1) {
-                    arrItem = arr[i];
+			for (i = 0; i < arrLen; i += 1) {
+				arrItem = arr[i];
 
-					// Update the dialog's options only if the values specified are valid (true or false).
-                    if (arrItem.value === 'true' || arrItem.value === 'false') {
-						dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
-							val(arrItem.value).
-                            addClass(arrItem.value);
-					}
-                    
-                    if (arrItem.value !== 'true' && arrItem.value !== 'false' && arrItem.value !== 'default') {
-                        dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
-							val(arrItem.value).
-                            addClass('other');
-                    }
-                    
-                    if (!isNaN(arrItem.value)) {
-                        dialog.find('.modal-body input[data-name="' + arrItem.name + '"]').val(arrItem.value);
-                    }
+				// Update the dialog's options only if the values specified are valid (true or false).
+				if (arrItem.value === 'true' || arrItem.value === 'false') {
+					dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
+						val(arrItem.value).
+						addClass(arrItem.value);
 				}
 
-                generateDirective();
-            }
+				if (arrItem.value !== 'true' && arrItem.value !== 'false' && arrItem.value !== 'default') {
+					dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
+						val(arrItem.value).
+						addClass('other');
+				}
+
+				if (!isNaN(arrItem.value)) {
+					dialog.find('.modal-body input[data-name="' + arrItem.name + '"]').val(arrItem.value);
+				}
+			}
+
+			generateDirective();
         }
 
         /**
@@ -258,7 +254,15 @@ define(function (require, exports) {
         inputsLen = inputs.length;                                          // inputs length
         result = dialog.find('#georapbox-jsl-conf-result');			        // result placeholder
         
-        getDirectiveFromEditor();
+		// Populate modal options based on directive derived from current docuent or configuration file.
+        // If directive is derived from document, assumes that directive will be found in first line of current document.
+		if (currentDoc.getLine(0).indexOf('/*jshint') >= 0) {
+			populateModalOptions(currentDoc.getLine(0));
+		} else {
+            JSHintConfig.getDirective().then(function (directiveStr) {
+                populateModalOptions(directiveStr);
+            });
+        }
 
         if (FileExtension.get() !== 'js') {
             disableDialogOkButton();

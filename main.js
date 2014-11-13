@@ -1,5 +1,3 @@
-/*jshint camelcase: true, curly: true, eqeqeq: true, forin: true, freeze: true, immed: true, latedef: nofunc, newcap: true, noarg: true, noempty: true, nonew: true, unused: strict, strict: true, indent: 4*/
-/*global define, $, brackets */
 define(function (require, exports, module) {
     'use strict';
     
