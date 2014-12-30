@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     'use strict';
-    
+
     var AppInit = brackets.getModule('utils/AppInit'),
         DocumentManager = brackets.getModule('document/DocumentManager'),
         CommandManager = brackets.getModule('command/CommandManager'),
@@ -30,7 +30,7 @@ define(function (require, exports, module) {
         ExtensionUtils.loadStyleSheet(module, 'css/georapbox-jshint.css');
 
         var editMenu = Menus.getMenu(Menus.AppMenuBar.EDIT_MENU);
-        
+
         CommandManager.register(Strings.COMMAND_NAME, JSHINT_CMD_ID, OptionsDialog.show);
         editMenu.addMenuItem(JSHINT_CMD_ID, 'Ctrl-Alt-Shift-J');
 
@@ -39,6 +39,6 @@ define(function (require, exports, module) {
 
         toggleIconVisibility();
 
-        $(DocumentManager).on('currentDocumentChange', toggleIconVisibility);
+        DocumentManager.on('currentFileChange', toggleIconVisibility);
     });
 });
