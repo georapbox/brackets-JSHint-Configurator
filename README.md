@@ -3,7 +3,7 @@ JSHint Configurator
 
 [Brackets](http://brackets.io/) extension that enables configuration of [JSHint](http://www.jshint.com/) options.
 
-**NOTE:** This extensions assumes you have a JSHint plugin installed. 
+**NOTE:** This extensions assumes you have a JSHint plugin installed.
 
 #####Suggested JSHint plugins:
 - @cfjedimaster's [brackets-jshint](https://github.com/cfjedimaster/brackets-jshint)
@@ -34,6 +34,10 @@ Check the desired options, click the **'Insert directive to document'** button..
 **Hint:** The configurator always inserts the JSHint directive in the first line of the document. Therefore, every time the dialog opens, it checks if the first line of the document has a JSHint directive and populates the appropriate options.
 
 ##Changelog
+
+### 1.1.1
+- Always display the icon in toolbar no matter file extension.
+- Update toolbar icon.
 
 ### 1.1.0
 - Add support to read from <code>.jshintrc</code> configuration file.

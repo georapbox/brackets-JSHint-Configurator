@@ -1,6 +1,6 @@
 define(function (require, exports) {
     'use strict';
-    
+
     var Dialogs = brackets.getModule('widgets/Dialogs'),
         EditorManager = brackets.getModule('editor/EditorManager'),
         DocumentManager = brackets.getModule('document/DocumentManager'),
@@ -8,7 +8,7 @@ define(function (require, exports) {
         Strings = require('strings'),
         FileExtension = require('services/file_extension'),
 		JSHintConfig = require('services/read_config');
-    
+
     /**
 	 * Displays dialog with JSHint options.
 	*/
@@ -47,8 +47,8 @@ define(function (require, exports) {
 		 */
 		function clearOptions() {
 			varEls.val('default').                // Reset all var elements.
-                removeClass('true false other');    
-            
+                removeClass('true false other');
+
 			inputs.val('');                       // Clear input elements' values.
 			result.val('');                       // Clear the directive textarea.
 			opts = [];                            // Empty options array.
@@ -245,7 +245,7 @@ define(function (require, exports) {
                     dialog.off('change');
                 }
 			});
-        
+
 		dialog = $('.georapbox-jshint-settings-dialog.instance');		    // dialog modal
         dialogOkBtn = dialog.find('a[data-button-id="ok"]');                // dialog OK button
         varEls = dialog.find('.modal-body').find('select');                 // dialog dropdowns
@@ -253,7 +253,7 @@ define(function (require, exports) {
         inputs = dialog.find('.modal-body').find('input[type="number"]');   // dialog inputs
         inputsLen = inputs.length;                                          // inputs length
         result = dialog.find('#georapbox-jsl-conf-result');			        // result placeholder
-        
+
 		// Populate modal options based on directive derived from current docuent or configuration file.
         // If directive is derived from document, assumes that directive will be found in first line of current document.
 		if (currentDoc.getLine(0).indexOf('/*jshint') >= 0) {
@@ -272,7 +272,7 @@ define(function (require, exports) {
         dialog.
             on('change', '.modal-body select', function () {
                 var self = $(this);
-            
+
                 switch (self.val()) {
                     case 'true': self.removeClass('false other').addClass('true');
                     break;
@@ -283,7 +283,7 @@ define(function (require, exports) {
                     default: self.removeClass('default true false').addClass('other');
                     break;
                 }
-            
+
                 if ($(this).val() === 'true') {
                     $(this).addClass('true');
                 }

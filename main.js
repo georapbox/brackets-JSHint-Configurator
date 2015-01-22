@@ -2,7 +2,6 @@ define(function (require, exports, module) {
     'use strict';
 
     var AppInit = brackets.getModule('utils/AppInit'),
-        DocumentManager = brackets.getModule('document/DocumentManager'),
         CommandManager = brackets.getModule('command/CommandManager'),
         Menus = brackets.getModule('command/Menus'),
         ExtensionUtils = brackets.getModule('utils/ExtensionUtils'),
@@ -13,6 +12,7 @@ define(function (require, exports, module) {
         FileExtension = require('services/file_extension');
 
 	/**
+	 * !Deprecated
 	 * Toggles visibility of toobar icon depending on
 	 * the current file's extension.
 	 */
@@ -36,9 +36,5 @@ define(function (require, exports, module) {
 
         toolbarIcon.on('click', OptionsDialog.show).
             appendTo('#main-toolbar .buttons');
-
-        toggleIconVisibility();
-
-        DocumentManager.on('currentFileChange', toggleIconVisibility);
     });
 });
