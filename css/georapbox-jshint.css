@@ -9,7 +9,7 @@
  * ===========================
 */
 .georapbox-jshint-settings-dialog {
-	width: 55%;
+	width: 80%;
 }
 
 /* Dialog header */
@@ -130,6 +130,6 @@
 /* Media queries */
 @media only screen and (max-width: 1366px) {
     .georapbox-jshint-settings-dialog {
-        width: 85%;
+        width: 95%;
     }
 }

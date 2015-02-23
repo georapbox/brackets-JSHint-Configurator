@@ -35,6 +35,9 @@ Check the desired options, click the **'Insert directive to document'** button..
 
 ##Changelog
 
+### 1.1.2
+- Add more options based on newest version of JSHint.
+
 ### 1.1.1
 - Always display the icon in toolbar no matter file extension.
 - Update toolbar icon.

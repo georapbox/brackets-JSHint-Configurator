@@ -1,3 +1,5 @@
+/*jshint browser: true, devel: true, jquery: true, node: true*/
+/*global brackets, define*/
 define(function (require, exports, module) {
     'use strict';
 

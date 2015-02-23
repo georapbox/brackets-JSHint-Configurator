@@ -1,3 +1,5 @@
+/*jshint browser: true, devel: true, jquery: true, node: true*/
+/*global Mustache, brackets, define*/
 define(function (require, exports) {
     'use strict';
 

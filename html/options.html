@@ -12,6 +12,14 @@
             <p>{{ENFORCING_OPTIONS_DESC}}</p>
 
             <div class="column col-5">
+                <div data-name="enforceall">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{ENFORCEALL_DESC}}"><a href="http://www.jshint.com/docs/options/#enforceall">{{ENFORCEALL}}</a></span>
+                </div>
                 <div data-name="bitwise">
                     <select>
                         <option value="default">default</option>
@@ -52,9 +60,25 @@
                     </select>
                     <span class="option-name" title="{{ES3_DESC}}"><a href="http://www.jshint.com/docs/options/#es3">{{ES3}}</a></span>
                 </div>
+                <div data-name="es5">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{ES5_DESC}}"><a href="http://www.jshint.com/docs/options/#es5">{{ES5}}</a></span>
+                </div>
             </div>
 
             <div class="column col-5">
+                <div data-name="globals">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{GLOBALS_DESC}}"><a href="http://www.jshint.com/docs/options/#globals">{{GLOBALS}}</a></span>
+                </div>
                 <div data-name="forin">
                     <select>
                         <option value="default">default</option>
@@ -91,6 +115,14 @@
                         <option value="nofunc">nofunc</option>
                     </select>
                     <span class="option-name" title="{{LATEDEF_DESC}}"><a href="http://www.jshint.com/docs/options/#latedef">{{LATEDEF}}</a></span>
+                </div>
+                <div data-name="nocomma">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{NOCOMMA_DESC}}"><a href="http://www.jshint.com/docs/options/#nocomma">{{NOCOMMA}}</a></span>
                 </div>
             </div>
 
@@ -134,6 +166,14 @@
                         <option value="false">false</option>
                     </select>
                     <span class="option-name" title="{{NONEW_DESC}}"><a href="http://www.jshint.com/docs/options/#nonew">{{NONEW}}</a></span>
+                </div>
+                <div data-name="singleGroups">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{SINGLEGROUPS_DESC}}"><a href="http://www.jshint.com/docs/options/#singleGroups">{{SINGLEGROUPS}}</a></span>
                 </div>
             </div>
 
@@ -240,6 +280,14 @@
                     </select>
                     <span class="option-name" title="{{DEBUG_DESC}}"><a href="http://www.jshint.com/docs/options/#debug">{{DEBUG}}</a></span>
                 </div>
+                <div data-name="elision">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{ELISION_DESC}}"><a href="http://www.jshint.com/docs/options/#elision">{{ELISION}}</a></span>
+                </div>
                 <div data-name="eqnull">
                     <select>
                         <option value="default">default</option>
@@ -298,6 +346,14 @@
                         <option value="false">false</option>
                     </select>
                     <span class="option-name" title="{{ITERATOR_DESC}}"><a href="http://www.jshint.com/docs/options/#iterator">{{ITERATOR}}</a></span>
+                </div>
+                <div data-name="withstmt">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{WITHSTMT_DESC}}"><a href="http://www.jshint.com/docs/options/#withstmt">{{WITHSTMT}}</a></span>
                 </div>
             </div>
 
@@ -387,8 +443,10 @@
                 <div data-name="shadow">
                     <select>
                         <option value="default">default</option>
-                        <option value="true">true</option>
-                        <option value="false">false</option>
+                        <option value="inner">inner - check for variables defined in the same scope only</option>
+                        <option value="outer">outer - check for variables defined in outer scopes as well </option>
+                        <option value="true">true - allow variable shadowing</option>
+                        <option value="false">false - same as inner</option>
                     </select>
                     <span class="option-name" title="{{SHADOW_DESC}}"><a href="http://www.jshint.com/docs/options/#shadow">{{SHADOW}}</a></span>
                 </div>
@@ -517,7 +575,7 @@
                 </div>
             </div>
 
-            <div class="column col-5 last">
+            <div class="column col-5">
                 <div data-name="rhino">
                     <select>
                         <option value="default">default</option>
@@ -549,6 +607,61 @@
                         <option value="false">false</option>
                     </select>
                     <span class="option-name" title="{{YUI_DESC}}"><a href="http://www.jshint.com/docs/options/#yui">{{YUI}}</a></span>
+                </div>
+                <div data-name="browserify">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{BROWSERIFY_DESC}}"><a href="http://www.jshint.com/docs/options/#browserify">{{BROWSERIFY}}</a></span>
+                </div>
+            </div>
+
+            <div class="column col-5 last">
+                <div data-name="jasmine">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{JASMINE_DESC}}"><a href="http://www.jshint.com/docs/options/#jasmine">{{JASMINE}}</a></span>
+                </div>
+
+                <div data-name="mocha">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{MOCHA_DESC}}"><a href="http://www.jshint.com/docs/options/#mocha">{{MOCHA}}</a></span>
+                </div>
+
+                <div data-name="qunit">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{QUNIT_DESC}}"><a href="http://www.jshint.com/docs/options/#qunit">{{QUNIT}}</a></span>
+                </div>
+
+                <div data-name="shelljs">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{SHELLJS_DESC}}"><a href="http://www.jshint.com/docs/options/#shelljs">{{SHELLJS}}</a></span>
+                </div>
+
+                <div data-name="typed">
+                    <select>
+                        <option value="default">default</option>
+                        <option value="true">true</option>
+                        <option value="false">false</option>
+                    </select>
+                    <span class="option-name" title="{{TYPED_DESC}}"><a href="http://www.jshint.com/docs/options/#typed">{{TYPED}}</a></span>
                 </div>
             </div>
         </div>
