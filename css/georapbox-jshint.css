@@ -133,3 +133,14 @@
         width: 95%;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .georapbox-jshint-settings-dialog {
+        width: 85%;
+    }
+
+    .georapbox-jshint-settings-dialog .column {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}

@@ -13,7 +13,6 @@ define(function (require, exports) {
         rxJSHintOptions = /^(?:\/\/|\/\*)\s*jshint\s*([^/]*?)\s*(?:\*\/)?$/,
         rxJSHintValue = /^([^ :]+)\s*:\s*(.*)$/,
         rxJSHintValueSeparator = /\s*,\s*/;
-  
 
     /**
 	 * Displays dialog with JSHint options.
@@ -173,22 +172,24 @@ define(function (require, exports) {
 			for (i = 0; i < arrLen; i += 1) {
 				arrItem = arr[i];
 
-				// Update the dialog's options only if the values specified are valid (true or false).
-				if (arrItem.value === 'true' || arrItem.value === 'false') {
-					dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
-						val(arrItem.value).
-						addClass(arrItem.value);
-				}
+                if (arrItem) {
+                    // Update the dialog's options only if the values specified are valid (true or false).
+                    if (arrItem.value === 'true' || arrItem.value === 'false') {
+                        dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
+                            val(arrItem.value).
+                            addClass(arrItem.value);
+                    }
 
-				if (arrItem.value !== 'true' && arrItem.value !== 'false' && arrItem.value !== 'default') {
-					dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
-						val(arrItem.value).
-						addClass('other');
-				}
+                    if (arrItem.value !== 'true' && arrItem.value !== 'false' && arrItem.value !== 'default') {
+                        dialog.find('.modal-body div[data-name="' + arrItem.name + '"] select').
+                            val(arrItem.value).
+                            addClass('other');
+                    }
 
-				if (!isNaN(arrItem.value)) {
-					dialog.find('.modal-body input[data-name="' + arrItem.name + '"]').val(arrItem.value);
-				}
+                    if (!isNaN(arrItem.value)) {
+                        dialog.find('.modal-body input[data-name="' + arrItem.name + '"]').val(arrItem.value);
+                    }
+                }
 			}
 
 			generateDirective();
