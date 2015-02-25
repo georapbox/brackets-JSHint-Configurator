@@ -9,7 +9,11 @@ define(function (require, exports) {
 		OptionsTemplate = require('text!html/options.html'),
         Strings = require('strings'),
         FileExtension = require('services/file_extension'),
-		JSHintConfig = require('services/read_config');
+		JSHintConfig = require('services/read_config'),
+        rxJSHintOptions = /^(?:\/\/|\/\*)\s*jshint\s*([^/]*?)\s*(?:\*\/)?$/,
+        rxJSHintValue = /^([^ :]+)\s*:\s*(.*)$/,
+        rxJSHintValueSeparator = /\s*,\s*/;
+  
 
     /**
 	 * Displays dialog with JSHint options.
@@ -139,7 +143,7 @@ define(function (require, exports) {
 
 			// Check if document already has a JSLint directive
 			// and remove the line with the old directive.
-			if (firstLineContent.indexOf('/*jshint') >= 0) {
+			if (rxJSHintOptions.test(firstLineContent)) {
 				editorDoc.replaceRange('', {line: 1, ch: 0}, {line: 2, ch: 0});
 			}
 		}
@@ -151,30 +155,18 @@ define(function (require, exports) {
         function populateModalOptions(directiveString) {
             var tempArr = [],
                 arr = [],
-                tempArrLen,
                 arrLen,
-                tempArrItem,
+                tempStr,
                 arrItem,
-                subStr,
-                option,
                 i;
 
-			subStr = directiveString.replace('/*jshint', '');
-			subStr = subStr.replace('*/', '');
-			tempArr = subStr.split(',');
-			tempArr = $.map(tempArr, $.trim);
-			tempArrLen = tempArr.length;
-
-			for (i = 0; i < tempArrLen; i += 1) {
-				tempArrItem = tempArr[i];
-
-				option = {
-					name: tempArrItem.substr(0, tempArrItem.indexOf(':')),
-					value: $.trim(tempArrItem.substr(tempArrItem.indexOf(':')).replace(':', ''))
-				};
-
-				arr.push(option);
-			}
+			tempStr = (directiveString.match(rxJSHintOptions) || []).pop();
+            if (tempStr)
+              arr = tempStr.split(rxJSHintValueSeparator).map(function (value) {
+                var option = value.match(rxJSHintValue);
+                if (option)
+                  return { name: option[1], value: option[2] };
+              });
 
 			arrLen = arr.length;
 
@@ -258,7 +250,7 @@ define(function (require, exports) {
 
 		// Populate modal options based on directive derived from current docuent or configuration file.
         // If directive is derived from document, assumes that directive will be found in first line of current document.
-		if (currentDoc.getLine(0).indexOf('/*jshint') >= 0) {
+		if (rxJSHintOptions.test(currentDoc.getLine(0))) {
 			populateModalOptions(currentDoc.getLine(0));
 		} else {
             JSHintConfig.getDirective().then(function (directiveStr) {
