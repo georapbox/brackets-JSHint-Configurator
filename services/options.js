@@ -225,7 +225,7 @@ define(function (require, exports) {
 
 		promise = Dialogs.showModalDialogUsingTemplate(Mustache.render(OptionsTemplate, Strings)).
             done(function (id) {
-				// if button OK clicked...
+            // if button OK clicked...
                 if (id === Dialogs.DIALOG_BTN_OK) {
 					if (opts.length >= 1) {
 						insertDirectiveToEditor();
@@ -248,6 +248,9 @@ define(function (require, exports) {
         inputs = dialog.find('.modal-body').find('input[type="number"]');   // dialog inputs
         inputsLen = inputs.length;                                          // inputs length
         result = dialog.find('#georapbox-jsl-conf-result');			        // result placeholder
+
+        // Tweak ".modal-wrapper" width, to center align the modal instance.
+        dialog.parent().parent().css({ width: 640 });
 
 		// Populate modal options based on directive derived from current docuent or configuration file.
         // If directive is derived from document, assumes that directive will be found in first line of current document.
