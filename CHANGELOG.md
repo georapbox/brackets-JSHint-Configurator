@@ -1,5 +1,8 @@
 #Changelog
 
+### 1.1.4
+- UI updates to conform with Brackets v1.2.
+
 ### 1.1.3
 - Support more robust JSHint inline options parsing. Credits to [Marko Dumic](https://github.com/mdumic).
 - Fix styling issues.
