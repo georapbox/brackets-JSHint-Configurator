@@ -249,9 +249,6 @@ define(function (require, exports) {
         inputsLen = inputs.length;                                          // inputs length
         result = dialog.find('#georapbox-jsl-conf-result');			        // result placeholder
 
-        // Tweak ".modal-wrapper" width, to center align the modal instance.
-        dialog.parent().parent().css({ width: 640 });
-
 		// Populate modal options based on directive derived from current docuent or configuration file.
         // If directive is derived from document, assumes that directive will be found in first line of current document.
 		if (rxJSHintOptions.test(currentDoc.getLine(0))) {
