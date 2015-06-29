@@ -4,6 +4,7 @@ define(function (require, exports, module) {
     'use strict';
     
     module.exports = {
-        root: true
+        root: true,
+        ja: true
     };
 });
