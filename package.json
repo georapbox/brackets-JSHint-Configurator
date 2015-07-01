@@ -15,6 +15,12 @@
         "options",
         ".jshintrc"
     ],
+    "i18n": ["en", "ja"],
+    "package-i18n": {
+        "ja": {
+            "description": "JSHint オプションの設定を可能にする。現在のドキュメントのインライン設定ディレクティブ、または '.jshintrc' 設定ファイルから読み込む。JSHint オプションを JSON 形式で表示する。"
+        }
+    },
     "engines": {
         "brackets": ">=0.37.0"
     }
