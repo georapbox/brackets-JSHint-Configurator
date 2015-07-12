@@ -1,5 +1,8 @@
 #Changelog
 
+### 1.1.6
+- Japanese translation by [Norihito Nishioka](https://github.com/nishioka).
+
 ### 1.1.4
 - UI updates to conform with Brackets v1.2.
 
